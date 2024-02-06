@@ -2,17 +2,12 @@
 
 using namespace std;
 
-float num1, num2, res;
-char ops;
+double num1, num2, res;
+char ops, dem;
 
 int main(){
-    cout << "Num1: " << endl;
-    cin >> num1;
-    cout << "Num2: " << endl;
-    cin >> num2;
-
-    cout << "Operator: " << endl;
-    cin >> ops;
+    cout << "Insert Calculation as followed (\"Number Operator[+,-,*,/] Number\"): " << endl;
+    cin >> num1 >> ops >> num2;
 
     switch (ops){
         case '+':
@@ -28,14 +23,24 @@ int main(){
         break;
 
         case '/':
-        res = num1 / num2;
-        break;
+        if (num2 != 0){
+            res = num1 / num2;
+            break;
+        }
 
         default:
-        cout << "Wrong Operator. Choose +,-,*,/: " << endl;
+        cout << "There was a misinput" << endl;
         break;
-
     }
+
     cout << res << endl;
+
+    cout << "Press y if you want to perform another calculation: " << endl;
+    cin >> dem;
+
+    if (dem == 'y'){
+        main();
+    }
+    
     return 0;
 }
