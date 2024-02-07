@@ -35,7 +35,7 @@ int main(){
 
     cout << res << endl;
 
-    cout << "Press y if you want to perform another calculation: " << endl;
+    cout << "Press y if you want to perform another calculation (else, press any other key): " << endl;
     cin >> dem;
 
     if (dem == 'y'){
